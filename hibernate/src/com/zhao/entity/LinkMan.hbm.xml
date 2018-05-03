@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zhao.entity.LinkMan" table="t_linkman">
+		<id name="lid" column="lid">
+			<generator class="native"></generator>
+		</id>
+		<property name="lkmName" column="lkmname"></property>
+		<property name="lkmGender" column="lkmgender"></property>
+		<property name="lkmPhone" column="lkmphone"></property>
+
+		<!-- 联系人所属客户 name：实体类中的customer对象 class：customer全路径 column：外键名 -->
+		<many-to-one name="customer" class="com.zhao.entity.Customer" column="clid"></many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zhao.entity.Customer" table="t_customer">
+		<id name="cid" column="cid">
+			<generator class="native"></generator>
+		</id>
+		<property name="custName" column="custname"></property>
+		<property name="custLevel" column="custlevel"></property>
+		<property name="custSource" column="custsource"></property>
+		<property name="custPhone" column="custphone"></property>
+
+		<!-- 表示所有联系人 -->
+		<set name="setLinkMan" cascade="save-update,delete" inverse="true" batch-size="10">
+			<!-- 双向维护外键，在一和多每一方都要配置外键、column为外键名 -->
+			<key column="clid"></key>
+			<!-- 客户所有的联系人，class写联系人的全路径 -->
+			<one-to-many class="com.zhao.entity.LinkMan" />
+		</set>
+	</class>
+</hibernate-mapping>

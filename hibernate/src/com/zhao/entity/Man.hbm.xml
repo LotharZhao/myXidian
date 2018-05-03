@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.zhao.entity.Man" table="t_man">
+		<id name="manid" column="manid">
+			<generator class="native"></generator>
+		</id>
+		<property name="manName" column="manname"></property>
+		<property name="manAge" column="manage"></property>
+
+		<!-- table：第三张表的名字 -->
+		<set name="setRole" table="man_role" cascade="save-update,delete">
+			<!-- column：在第三张表中的id -->
+			<key column="manid"></key>
+			<!-- column：Role在第三张表中的id -->
+			<many-to-many class="com.zhao.entity.Role" column="roleid"></many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

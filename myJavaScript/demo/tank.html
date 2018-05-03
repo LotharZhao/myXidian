@@ -1,0 +1,97 @@
+<html>  
+    <head>  
+  <meta charset="UTF-8">
+          
+    </head>  
+<body onkeydown="hero.move(event)">  
+<div id="filed" style="background-color:black; width:500px; height:400px; position:absolute;">  
+<div id="mytank" style="background-position-y:-35px; background-image:url('tank.png'); width:34px; height:35px; position:absolute;"></div>  
+<script language="javascript">     
+          
+        //用面向对象的方法开发，web版本的坦克大战1.0（用wasd控制）  
+          
+        function MyTank(x,y,direct){  
+            this.x=x; //横坐标  
+            this.y=y;  
+            this.direct=direct;  //方向  
+            this.speed=3; //速度  
+              
+            //初始化  
+            mytank.style.left=this.x+"px";  
+            mytank.style.top=this.y+"px";  
+            mytank.style.backgroundPositionY=direct+"px";  
+              
+            //event表示按键事件  
+            this.move=function move(event){  
+                //window.alert(event.keyCode);//可以测试键盘按键返回的 keyCode 是多少  
+                //a 左 3，s 下 2，d 右 1，w 上 0  
+                //添加方向键：上 38; 左 37; 下 40; 右 39;  
+                switch(event.keyCode){  
+                    case 65: //a 向左 3  
+                    case 37:  
+                        this.x-=this.speed;  
+                        this.direct=3;  
+                        mytank.style.backgroundPositionY="35px";  
+                        break;  
+                    case 83: //s 向下 2  
+                    case 40:  
+                        this.y+=this.speed;  
+                        this.direct=2;  
+                        mytank.style.backgroundPositionY="70px";  
+                        break;  
+                    case 68: //d 向右 1  
+                    case 39:  
+                        this.x+=this.speed;  
+                        this.direct=1;  
+                        mytank.style.backgroundPositionY="105px";  
+                        break;  
+                    case 87: //w 向上 0  
+                    case 38:  
+                        this.y-=this.speed;  
+                        this.direct=0;  
+                        mytank.style.backgroundPositionY="0px";  
+                        break;  
+                }  
+                  
+                //统一改变位置  
+                mytank.style.left=this.x+"px";  
+                mytank.style.top=this.y+"px";  
+            }  
+          
+        }  
+          
+        //创建坦克  
+        var hero=new MyTank(200,365,0);  
+          
+        function move(obj){  
+              
+            //注意：在js中引用属性的时候不能写-，即不能写成background-position-y，必须写成下面的形式  
+            //必须写成这样的形式： backgroundPositionY  
+            if(obj.value=="上"){  
+              
+                hero.y-=hero.speed;  
+                mytank.style.backgroundPositionY="0px";  
+            }else if(obj.value=="右"){  
+                hero.x+=hero.speed;  
+                mytank.style.backgroundPositionY="105px";  
+            }else if(obj.value=="下"){  
+                hero.y+=hero.speed;  
+                mytank.style.backgroundPositionY="70px";  
+            }else if(obj.value=="左"){  
+                hero.x-=hero.speed;  
+                mytank.style.backgroundPositionY="35px";  
+            }  
+            //统一改变位置  
+            mytank.style.left=hero.x+"px";  
+            mytank.style.top=hero.y+"px";  
+        }  
+</script>  
+<br/>  
+<div style="top:410px; position:absolute;">  
+<input type="button" value="上" onclick="move(this)" />  
+<input type="button" value="右" onclick="move(this)" />  
+<input type="button" value="下" onclick="move(this)" />  
+<input type="button" value="左" onclick="move(this)" />  
+</div>  
+</body>  
+</html>  

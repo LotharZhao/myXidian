@@ -1,0 +1,24 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript">
+  <!--
+	function goback(){
+		window.alert(history.length);
+		history.back();//等价于history.go(-1),与history.forward()相反
+	}
+
+	function test(){
+		location.reload();
+		window.alert(location.href);
+	}
+	document.writeln(navigator.appVersion+"<br/>");
+  //-->
+  </script>
+ </head>
+ <body>
+ <a href="#" onclick="goback()">返回上级页面</a>
+ <br/>	
+ <input type="button" value="刷新" onclick="test()"/>
+ </body>
+</html>

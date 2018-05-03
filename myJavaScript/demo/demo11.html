@@ -1,0 +1,60 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript">
+  <!--
+	function Master(){
+		this.feed=function(animal,food){
+			window.alert(animal.constructor);
+			document.write(animal.name+"吃"+food.name);
+		}
+	}
+
+	function Food(name){
+		this.name=name;
+	}
+	function Fish(name){
+		this.food=Food;//对象冒充
+		this.food(name);
+	}
+	function Bone(name){
+		this.food=Food;
+		this.food(name);
+	}
+
+	function Animal(name){
+		this.name=name;
+	}
+	function Cat(name){
+		this.animal=Animal;
+		this.animal(name);
+	}
+	function Dog(name){
+		this.animal=Animal;
+		this.animal(name);
+	}
+
+	var cat=new Cat("猫");
+	var dog=new Dog("狗");
+	var fish=new Fish("鱼");
+	var bone=new Bone("骨头");
+
+	var master=new Master();
+	master.feed(cat,fish);
+
+	function a(){//闭包
+		var i=0;
+		function b(){
+			window.alert(++i);
+		}
+		return b;
+	}
+	var c=a();
+	c();
+  //-->
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

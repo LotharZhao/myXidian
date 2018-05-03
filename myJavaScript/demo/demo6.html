@@ -1,0 +1,43 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript">
+  <!--
+	function Cat(){//猫类（猫的原型对象）
+		this.order="me";//this相当于设定其属性和默认值；是公开的
+		var order2="me2";//私有，对象访问不到
+
+		this.show=function(){//该类的公开的方法
+			window.alert(order2);
+		}
+		function show2(){}//私有方法
+	}
+	document.writeln(Cat.constructor+"<br/>");
+
+	var cat1=new Cat();//一个实例
+	cat1.name="小白";
+	cat1.age=3;
+	cat1.color="white";
+
+	document.writeln(typeof cat1+"<br/>");
+	document.writeln(cat1.constructor+"<br/>");
+	document.writeln(cat1.name+cat1.age+cat1.color+cat1.order+cat1.order2+"<br/>");
+
+	cat1.order="you";
+	var val="or"+"der"
+	document.writeln(cat1[val]+cat1["color"]+"<br/>");
+
+	if(cat1 instanceof Cat){//判断一个对象实例是不是Cat类
+		window.alert("yes");
+	}else{
+		window.alert("no");
+	}
+
+	cat1.show();
+  //-->
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

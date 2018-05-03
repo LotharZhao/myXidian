@@ -1,0 +1,53 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript">
+  <!--dom:window
+	function test1(){
+		var res=window.confirm("刪除？");
+		if(res){
+			window.alert("刪除！");
+		}else{
+			window.alert("放弃删除");
+		}
+	}
+	function test2(){
+		document.getElementById("mytime").innerText=new Date().toLocaleString();
+	}
+	setInterval("test2()",1000);
+
+	function test3(){
+		window.alert("test3");
+	}
+	var mytime=setTimeout("test3()",3000);
+	clearTimeout(mytime);//取消setTimeout
+
+	function test4(){
+		window.moveTo(100,100);
+	}
+
+	function $(id){
+		return document.getElementById(id);
+	}
+	function tiao(){
+		clearInterval(mytime);
+		window.open('demo15.html',"_self");
+	}
+	setTimeout("tiao()",5000);
+	function changeSec(){
+		$("myspan").innerText=$("myspan").innerText-1;
+	}
+	var mytime=setInterval("changeSec()",1000);
+  //-->
+  </script>
+ </head>
+ <body>
+  <input type="button" value="刪除记录" onclick="test1()"/>
+  <br/>
+  <span id="mytime"></span>
+  <br/>
+  <input type="button" value="移动窗口" onclick="test4()"/>
+  <br/>
+  <span id="myspan" style="color:red;font-size:50px">5</span>秒后跳转到demo15
+ </body>
+</html>

@@ -1,0 +1,107 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript">
+  <!--
+	function test1(){
+		document.getElementById("span1").innerHTML="<a href=demo16.html>demo16</a>";
+	}
+	function test2(){
+		if(span2.innerText=="-"){
+			mylist.style.display="none";
+			span2.innerText="+";
+		}else{
+			mylist.style.display="block";
+			span2.innerText="-";
+		}
+	}
+	function test3(obj){
+		var fruits=document.getElementsByName("fruit");
+		var totalPrice=0;
+		for(var i=0;i<fruits.length;i++){
+			if(fruits[i].checked){
+				totalPrice+=parseInt(fruits[i].value);
+			}
+		}
+		span3.innerText=totalPrice+"元";
+	}
+	function test5(obj){
+		var fruits=document.getElementsByName("fruit");
+		if(obj.innerText=="全选"){
+			for(i=0;i<fruits.length;i++){
+				fruits[i].checked=true;
+			}
+		}else{
+			for(i=0;i<fruits.length;i++){
+				fruits[i].checked=false;
+			}
+		}
+	}
+	function test6(obj){
+		var fruits=document.getElementsByName("fruit");
+		if(obj.checked){
+			for(i=0;i<fruits.length;i++){
+				fruits[i].checked=true;
+			}
+		}else{
+			for(i=0;i<fruits.length;i++){
+				fruits[i].checked=false;
+			}
+		}
+	}
+  //-->
+  </script>
+ </head>
+ <body>
+ <span id="span1"></span>
+ <input type="button" onclick="test1()" value="test1"/>
+ <br/><br/>
+ <h3><span id="span2" onclick="return test2()" style="border:red solid;">-</span>myFamily</h3>
+ <ul id="mylist">
+	<li>爸爸</li>
+	<li>妈妈</li>
+	<li>奶奶</li>
+ </ul>
+ <br/><br/>
+ <h3>我的购物车</h3>
+ <a onclick="test5(this),test3(this)" href="#">全选</a>
+ <a onclick="test5(this),test3(this)" href="#">取消</a><br/>
+ <input type="checkbox" onclick="test6(this),test3(this)"/>是否全选<br/>
+ <input type="checkbox" name="fruit" onclick="test3(this)" value="5"/>苹果 5元<br/>
+ <input type="checkbox" name="fruit" onclick="test3(this)" value="2"/>香蕉 2元<br/>
+ <input type="checkbox" name="fruit" onclick="test3(this)" value="1"/>西瓜 1元<br/>
+ <input type="checkbox" name="fruit" onclick="test3(this)" value="8"/>哈密瓜 8元<br/>
+ <input type="checkbox" name="fruit" onclick="test3(this)" value="6"/>菠萝 6元<br/>
+ <input type="checkbox" name="fruit" onclick="test3(this)" value="2"/>梨 2元<br/>
+ <input type="checkbox" name="fruit" onclick="test3(this)" value="3"/>橘子 3元<br/>
+ 总价格：<span id="span3">0元</span>
+ <br/><br/>
+ <select id="myselect" onchange="test4()">
+ 	<option value="" selected>--请选择一门课程--</option>
+ </select>
+ <textarea rows="10" cols="30" id="myarea"></textarea>
+ <script language="javascript" type="text/javascript">
+  <!--
+	var last_select_num=3;
+	
+	var myoption=document.createElement("option");
+	myoption.value="java";
+	myoption.text="java";
+	myselect.add(myoption);
+	
+	myoption=document.createElement("option");
+	myoption.value="oracle";
+	myoption.text="oracle";
+	myselect.add(myoption);
+	
+	myoption=document.createElement("option");
+	myoption.value="c++";
+	myoption.text="c++";
+	myselect.add(myoption);
+	
+	function test4(){
+		myarea.value+="你选中了"+myselect.options[myselect.selectedIndex].innerText+"\r\n";
+	}
+	</script>
+ </body>
+</html>

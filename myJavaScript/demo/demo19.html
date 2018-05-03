@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+<!--
+	function check(){
+		span1.innerText="";
+		span2.innerText="";
+		span3.innerText="";
+		span4.innerText="";
+		span5.innerText="";
+		span6.innerText="";
+		var form=document.forms[0];
+		if(form.username.value.length<3||form.username.value.length>8){
+			span1.innerText="用户名应该在3-8位之间！";
+			return false;
+		}
+		if(form.pwd.value.length<=3){
+			span2.innerText="密码至少3位！";
+			return false;
+		}
+		if(form.pwd.value!=form.repwd.value){
+			span3.innerText="两次密码不相同！";
+			return false;
+		}
+		if(parseInt(form.age.value)<0||parseInt(form.age.value)>120){
+			span4.innerText="请输入正确的年龄！";
+			return false;
+		}
+		return false;
+	}
+	function test(){
+		var form=document.forms[0];
+		var con=form.email.value;
+		var myReg=/^[a-zA-Z0-9_-]+@[a-zA-Z0-9]+(\.[a-z]+)+$/gi;
+		if(myReg.test(con)){
+			window.alert("格式正确");
+		}else{
+			window.alert("格式不正确");
+		}
+	}
+//-->
+</script>
+<style type="text/css"> 
+input{
+	width:150px;
+}
+table{
+	text-align:center;
+}
+span{
+	font-size: 10px;
+	color: red;
+}
+</style>
+</head>
+<body>
+<h3>个人信息</h3>
+    <form action="#" onsubmit="return check()">
+    <table>
+    <tr><td>Username:</td><td><input type="text" name="username"/></td><td><span id="span1"></span></td></tr>
+    <tr><td>Password:</td><td><input type="password" name="pwd"/></td><td><span id="span2"></span></td></tr>
+    <tr><td>rePassword:</td><td><input type="password" name="repwd"/></td><td><span id="span3"></span></td></tr>
+    <tr><td>Age:</td><td><input type="text" name="age"/></td><td><span id="span4"></span></td></tr>
+    <tr><td>Phone:</td><td><input type="text" name="phone"/></td><td><span id="span5"></span></td></tr>
+    <tr><td>Email</td><td><input type="text" name="email"/></td><td><span id="span6"></span></td></tr>
+    <tr><td><input type="submit" value="提交"/></td>
+    	<td><input type="reset" value="清空"/></td><td></td></tr>
+    </table>
+    <input type="button" value="测试邮箱" onclick="test()"/>
+    </form>
+</body>
+</html>

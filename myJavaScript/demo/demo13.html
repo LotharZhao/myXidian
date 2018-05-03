@@ -1,0 +1,64 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <link href="mycss.css" rel="stylesheet" type="text/css"/>
+  <script language="javascript" type="text/javascript">
+  <!--
+	function test1(e){
+		window.alert("x="+e.clientX+" y="+e.clientY);
+	}
+	function test2(){
+		window.alert(new Date());
+	}
+	function test3(eventObj){
+		var div1=document.getElementById("div1");
+		if(eventObj.value=="yellow"){
+			div1.style.backgroundColor="yellow";
+		}else if(eventObj.value=="red"){
+			div1.style.backgroundColor="red";
+		}
+	}
+	function test4(eventObj){
+		var cssRules=document.styleSheets[0].rules;
+		var style1=cssRules[0];
+		if(eventObj.value=="yellow"){
+			style1.style.backgroundColor="yellow";
+		}else if(eventObj.value=="red"){
+			style1.style.backgroundColor="red";
+		}
+	}
+	function test5(){
+		window.alert("定位在输入框");
+	}
+	function test6(){
+		window.alert("进入。。");
+		//把鼠标定位到test输入框
+		document.getElementById("text1").onfocus();
+	}
+	function test7(){
+		window.alert("退出。。");
+	}
+	function test8(){
+		window.alert("不要点击右键");
+		return false;
+	}
+	function test9(){
+		window.alert("不要选择");
+		return false;
+	}
+  //-->
+  </script>
+ </head>
+ <body onload="test6()" onunload="test7()" oncontextmenu="return test8()" onselectstart="return test9()">
+	<input type="button" onclick="test2()" value="show time"/>
+	<div id="div1" style="width:400px;height:250px;border:1px solid">div1</div>
+	<input type="button" onclick="test3(this)" value="yellow"/>
+	<input type="button" onclick="test3(this)" value="red"/>
+	<br/><br/>
+	<div id="div2" class="style1">div2</div>
+	<input type="button" onclick="test4(this)" value="yellow"/>
+	<input type="button" onclick="test3(this),test4(this)" value="red"/>
+	<br/><br/>
+	<input id="text1" type="text" onfocus="test5()"/>
+ </body>
+</html>

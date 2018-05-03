@@ -1,0 +1,45 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript">
+  <!--
+	function Person(name,ageIn,salary){
+		this.name=name;//公开属性
+		var age=ageIn;//私有属性
+		var sal=salary;
+		this.show1=function(){//公开方法（特权方法）
+			window.alert(age);
+		}
+		function show2(){//私有方法（内部方法）
+			window.alert(sal);
+		}
+	}
+	var p1=new Person("Tom",22,6500);
+	window.alert(p1.name+" "+p1.age);
+	p1.show1();
+	//p1.show2();//错误: 对象不支持“show2”属性或方法
+
+	function Girl(name,age,salary){
+		this.person=Person;
+		this.person(name,age,salary);//继承
+		this.pay=function(money){
+			window.alert(money*0.8);
+		}
+	}
+	function Boy(name,age,salary){
+		this.person=Person;
+		this.person(name,age,salary);
+		this.pay=function(money){
+			window.alert(money*0.6);
+		}
+	}
+	var g1=new Girl('g',10,200);
+	g1.show1();
+	g1.pay(100);
+  //-->
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

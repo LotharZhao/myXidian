@@ -1,0 +1,42 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript">
+  <!--
+	function jiSuan(num1,num2,oper){
+		if(oper=="+"){
+			return num1+num2;
+		}else if(oper=="-"){
+			return num1-num2;
+		}else if(oper=="*"){
+			return num1*num2;
+		}else if(oper=="/"){
+			return num1/num2;
+		}
+	}
+
+	function Person(name,age,fun){
+		this.name=name;
+		this.age=age;
+		this.myfun=fun;
+	}
+	var p1=new Person('abc',80,jiSuan);
+	window.alert(p1.name+p1.age);
+	window.alert(p1.myfun(10,30,"+"));
+
+	//另一种创建对象的形式,不需要定义具体类
+	var dog={name:"dd",age:10,show:function(){window.alert(this.name);}};
+	window.alert(dog.constructor);
+	window.alert(dog.name+dog.age);
+	dog.show();
+
+	for(var key in window){
+		document.writeln(key+":"+window[key]+"<br/>");
+	}
+  //-->
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

@@ -1,0 +1,44 @@
+<html>  
+<head>  
+  <meta charset="UTF-8">
+<title>小球撞球游戏</title>  
+<script language="javascript">    
+    
+        //定两个全局变量  
+        directX=1; //x轴的方向  
+        directY=1; //y轴的方向  
+          
+        sunX=0; //太阳的坐标  
+        sunY=0; //  
+        speed=2;//速度  
+        function sunMove(){  
+              
+            sunX+=directX*speed;  
+            sunY+=directY*speed;  
+              
+            //修改div的left top  
+            sundiv.style.top=sunY+"px";  
+            sundiv.style.left=sunX+"px";  
+              
+            //判断什么时候转变方向  
+            //什么时候x方向转向  
+            //offsetWidth 可以返回当前这个对象事件的宽度  
+            if(sunX+sundiv.offsetWidth>=document.body.clientWidth||sunX<=0){  
+                  
+                directX=-directX;  
+            }  
+            //判断y的方向  
+            if(sunY+sundiv.offsetHeight>=document.body.clientHeight||sunY<=0){  
+                  
+                directY=-directY;  
+            }  
+        }  
+   
+        setInterval("sunMove()",10);  
+</script>  
+</head>  
+<body style="background-image:url('mario.jpeg')">  
+<div id="sundiv" style="position:absolute">  
+<img src="mario.jpeg" style="width:100px"/>  
+</div></body>  
+</html>  

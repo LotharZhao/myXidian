@@ -1,0 +1,186 @@
+<html>  
+<head>  
+	<meta charset="UTF-8">
+    <title>乌龟抓鸡</title>   
+    <script language="javascript" type="text/javascript">  
+        <!--  
+            function $(id){  
+                return document.getElementById(id);   
+            }         
+              
+            //乌龟运动  
+            function move(event){  
+                var tortoise = $("tortoise");  
+                var keycode = event.keyCode;  
+                //window.alert(keycode);  
+                switch(keycode){  
+                    case 87://W  
+                                    moveUp(tortoise);  
+                                    break;  
+                    case 83://S  
+                                    moveDown(tortoise);  
+                                    break;  
+                    case 32://Space  
+                                    bullet();  
+                                    break;  
+                }  
+            }  
+              
+              
+                //发子弹  
+                function bullet(){  
+                    //先判断是否还有子弹在飞  
+                    if($("bullet")){  
+                        window.alert("不要太心急！");  
+                        return;  
+                    }  
+                      
+                    //得到乌龟的位置  
+                    var topString_of_tortoise = $("tortoise").style.top;  
+                    var topNum_of_tortoise = topString_of_tortoise.substring(0,topString_of_tortoise.indexOf("px"));  
+                    var topNum = parseInt(topNum_of_tortoise)+70;  
+                      
+                    var bullet = document.createElement("img");  
+                    bullet.src="3.png";  
+                    bullet.id="bullet";  
+                    bullet.style.width="60px";  
+                    bullet.style.height="30px";  
+                    bullet.style.position="absolute";  
+                    bullet.style.top=topNum+"px";  
+                    bullet.style.left="176px";  
+                    document.body.appendChild(bullet);  
+                    run();  
+                    window.setTimeout("stop_run()",4500);  
+                }  
+                  
+                var initLeft = 176;  
+                var blood = 2;  
+                function run_bullet(){  
+                    var duck = $("duck");  
+                    var bullet = $("bullet");//子弹图片  
+                    var blood2 = $("xue2");//血条2  
+                    var blood1 = $("xue1");//血条1  
+                    var option = $("xue");//血量提示  
+                    initLeft += 80;  
+                    bullet.style.left=initLeft+"px";  
+                    if(judge()==1){  
+                        blood--;  
+                        if(blood==1){  
+                                blood2.style.backgroundColor="white";  
+                                option.innerText="剩半血了！"  
+                        }  
+                        if(blood==0){  
+                                blood1.style.backgroundColor="white";  
+                                option.innerText="小鸡死了！"  
+                                document.body.removeChild(duck);  
+                                var option = window.confirm("恭喜你，打死了小鸡！是否重新开始？");  
+                                if(option){  
+                                    location.reload();    
+                                }  
+                        }  
+                    }  
+                }  
+                var myBullet;  
+                function run(){  
+                        myBullet = window.setInterval("run_bullet()",300);  
+                }  
+                //子弹停止运动,并清除子弹  
+                function stop_run(){  
+                    window.clearInterval(myBullet);   
+                    document.body.removeChild($("bullet"));  
+                    initLeft = 176;  
+                    muBullet="";  
+                }  
+              
+            //乌龟上移  
+            function moveUp(tortoise){  
+                var topString = tortoise.style.top;  
+                //window.alert(topString);  
+                var topNum = topString.substring(0,topString.indexOf("px"));  
+                topNum = parseInt(topNum) - 40;  
+                if(topNum<120){  
+                    tortoise.style.top = "120px";  
+                }else{  
+                    tortoise.style.top = topNum+"px";  
+                }  
+            }  
+                  
+                //乌龟下移  
+                function moveDown(tortoise){  
+                    var topString = tortoise.style.top;  
+                    //window.alert(topString);  
+                    var topNum = topString.substring(0,topString.indexOf("px"));  
+                    topNum = parseInt(topNum) + 40;  
+                    if(topNum>500){  
+                        tortoise.style.top = "500px";  
+                    }else{  
+                        tortoise.style.top = topNum+"px";  
+                    }  
+                }  
+                  
+                function duck(){  
+                    setInterval("duck_move()",200);  
+                }  
+                  
+                var k = 1;//方向  
+                var count = 1;//计数  
+                function duck_move(){  
+                    var duck = $("duck");  
+                    var topString = duck.style.top;  
+                    var topNum = topString.substring(0,topString.indexOf("px"));  
+                    topNum = parseInt(topNum) + k*40;  
+                    duck.style.top = topNum+"px";  
+                    count++;  
+                    if(count%10==0){  
+                        k = k * (-1);//反向     
+                    }  
+                }  
+                  
+                //判断子弹是否打到小鸡  
+                function judge(){  
+                        var duck = $("duck");  
+                        var bullet = $("bullet");  
+                        var duck_top_string = duck.style.top;  
+                        var duck_left_string = duck.style.left;  
+                        var duck_top_num =parseInt(duck_top_string.substring(0,duck_top_string.indexOf("px")));//小鸡的上边界  
+                        var duck_left_num = parseInt(duck_left_string.substring(0,duck_left_string.indexOf("px")));//小鸡的左边界  
+                          
+                        var bullet_top_string = bullet.style.top;  
+                        var bullet_left_string = bullet.style.left;  
+                        var bullet_top_num =parseInt(bullet_top_string.substring(0,bullet_top_string.indexOf("px")));//子弹的上边界  
+                        var bullet_left_num = parseInt(bullet_left_string.substring(0,bullet_left_string.indexOf("px")));//子弹的左边界  
+                          
+                        var y = 0;  
+                        var x = 0;  
+                        if((duck_top_num-bullet_top_num<30&&duck_top_num>bullet_top_num)
+                                ||(bullet_top_num-duck_top_num<125&&bullet_top_num>duck_top_num)){  
+                                y = 1;//纵向相交          
+                        }  
+                          
+                        if((duck_left_num-bullet_left_num<60&&duck_left_num>bullet_left_num)  
+                                ||(bullet_left_num-duck_left_num<125&&bullet_left_num>duck_left_num)){  
+                                x = 1;//横向相交          
+                        }  
+                          
+                        if(x==1&&y==1){  
+                            return 1;//打中     
+                        }else {  
+                            return 0;   //没有打中  
+                        }  
+                }  
+          
+        //>    
+    </script>  
+</head>     
+<body onkeyup="move(event)" onload="duck()">  
+    <h1 align=center>欢迎来到乌龟抓鸡游戏</h1>  
+    <div style="width:800px;height:30px;background:white;float:left">操作请使用键盘，上（W）,下（S），发子弹（空格Space）</div>  
+    <div id="blood" style="border:red solid;width:200px;height:20px;float:left">  
+        <div id="xue1" style="width:100px;height:20px;background-color:red;float:left"><span id="xue">小鸡满血</span></div>  
+        <div id="xue2" style="width:100px;height:20px;background-color:red;float:left"></div>  
+    </div>  
+    <br/><p>加油哦！</p>  
+    <div id="tortoise" style="width:125px;height:125px;position:absolute;left:50px;top:200px"><img src="1.jpg" width=120px height=120px/></div>  
+    <div id="duck" style="width:125px;height:125px;position:absolute;left:850px;top:150px;"><img src="2.jpg" width=120px height=120px/></div>  
+</body>  
+</html>  

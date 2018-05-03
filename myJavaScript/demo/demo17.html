@@ -1,0 +1,66 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript">
+  <!--
+	function test1(event){
+		if(event.keyCode<48||event.keyCode>57){
+			window.alert("你输入的不是数");
+			return false;
+		}
+	}
+	function test2(){
+		var hobbies=document.getElementsByName("hobby");
+		var hobbiesValue="";
+		for(var i=0;i<hobbies.length;i++){
+			if(hobbies[i].checked){
+				hobbiesValue=hobbiesValue+"/"+hobbies[i].value;
+			}
+		}
+		window.alert(hobbiesValue);
+	}
+	function test3(){
+		var myObjs=document.getElementsByTagName("input");
+		for(var i=0;i<myObjs.length;i++){
+			window.alert(myObjs[i].value);
+		}
+	}
+	function test4(){
+		var myElement=document.createElement("a");
+		myElement.href="demo16.html";
+		myElement.innerText="demo16";
+		myElement.id="id1";
+		/*myElement.style.left="200px";
+		myElement.style.top="100px";
+		myElement.style.position="absolute";
+		document.body.appendChild(myElement);*/
+		document.getElementById("div1").appendChild(myElement);
+	}
+	function test5(){
+		document.getElementById("div1").removeChild(document.getElementById("id1"));
+	}
+	function test6(){
+		document.fgColor="red";
+		document.bgColor="green";
+	}
+  //-->
+  </script>
+ </head>
+ <body>
+ <input type="text" id="text1" onkeypress="return test1(event)"/>
+ <br/><br/>
+ 请选择爱好：
+ <input type="checkbox" name="hobby" value="足球"/>足球
+ <input type="checkbox" name="hobby" value="篮球"/>篮球
+ <input type="checkbox" name="hobby" value="网球"/>网球
+ <input type="button" value="test2" onclick="test2()"/>
+ <br/><br/>
+ <input type="button" value="获取所有input" onclick="test3()"/>
+ <br/><br/>
+ <input type="button" value="动态创建超链接" onclick="test4()"/>
+ <div id="div1" style="width:200px;height:100px;border:1px solid">div1</div>
+ <input type="button" value="删除一个元素" onclick="test5()"/>
+ <br/><br/>
+ <input type="button" value="改变前景和背景色" onclick="test6()"/>
+ </body>
+</html>

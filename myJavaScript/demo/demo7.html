@@ -1,0 +1,54 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript">
+  <!--
+	function Person(name,age){
+		this.name=name;
+		this.age=age;
+
+		this.show=function(){//显示名字
+			window.alert("名字是："+this.name);
+		}
+		this.jiSuan=function(n){//计算1到n的和
+			var res=0;
+			for(var i=1;i<=n;i++){
+				res+=i;
+			}
+			return res;
+		}
+	}
+
+	var p1=new Person("Sam",9);
+	p1.show();
+	var p2=new Person("Tom",12);
+	p2.show();
+	document.writeln(p1.jiSuan(100));
+
+	//给一个对象添加方法的两种方式：
+	function a(){//1
+		window.alert(this.age);
+	}
+	p1.b=a;
+	p1.b();
+
+	p2.c=function(){//2
+		window.alert(this.name+this.age);
+	};
+	p2.c();
+
+	window.alert(p1.b);
+	window.alert(a);
+
+	Person.prototype.dd=function(){//给一个类添加成员方法
+		window.alert("ok!");
+	}
+	p1.dd();
+	p2.dd();
+  //-->
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

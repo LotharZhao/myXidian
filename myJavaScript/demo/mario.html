@@ -1,0 +1,70 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Mario</title>
+  <link href="mario.css" type="text/css" rel="stylesheet" />
+  <script language="javascript" type="text/javascript">
+  <!--
+	function Mario(){
+		this.x=0;
+		this.y=0;
+
+		this.move=function(dir){//移动0上,1右,2下,3左
+			var mymario=document.getElementById('mymario');
+			var top=mymario.style.top;
+			var left=mymario.style.left;
+			switch(dir){
+				case 0:
+					top=parseInt(top.substr(0,top.length-2));
+					mymario.style.top=(top-10)+"px";
+					break;
+				case 1:
+					left=parseInt(left.substr(0,left.length-2));
+					mymario.style.left=(left+10)+"px";
+					break;
+				case 2:
+					top=parseInt(top.substr(0,top.length-2));
+					mymario.style.top=(top+10)+"px";
+					break;
+				case 3:
+					left=parseInt(left.substr(0,left.length-2));
+					mymario.style.left=(left-10)+"px";
+					break;
+				
+			}
+		}
+	}
+	var mario=new Mario();
+	function marioMove(dir){
+		switch(dir){
+			case 0:
+				mario.move(dir);
+				break;
+			case 1:
+				mario.move(dir);
+				break;
+			case 2:
+				mario.move(dir);
+				break;
+			case 3:
+				mario.move(dir);
+				break;
+		}
+	}
+  //-->
+  </script>
+ </head>
+ <body>
+   <table class="controlCenter">
+	<tr><td colspan="3">Control Center</td></tr>
+	<tr><td></td><td><input type="button" value="up" onclick="marioMove(0)"/></td><td></td></tr>
+	<tr><td><input type="button" value="left" onclick="marioMove(3)"/></td>
+		<td></td>
+		<td><input type="button" value="right" onclick="marioMove(1)"/></td></tr>
+	<tr><td></td><td><input type="button" value="down" onclick="marioMove(2)"/></td><td></td></tr>
+  </table>
+  <div class="gamediv">
+	<img id="mymario" style="top:10px;left:10px;width:60px;position:absolute;" src="mario.jpeg"/>
+  </div>
+ </body>
+</html>

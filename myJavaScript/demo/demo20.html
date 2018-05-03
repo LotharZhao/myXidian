@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+<!--
+	function test1(){
+		var myrows=mytable.rows;
+		for(i=0;i<myrows.length;i++){
+			var mycells=myrows[i].cells;
+			for(j=0;j<mycells.length;j++){
+				alert(mycells[j].innerText);
+			}
+		}
+	}
+	function test2(){
+		mytable.deleteRow(mytable.rows.length-1);
+	}
+	function test3(){
+		var myrows=mytable.rows;
+		for(i=0;i<myrows.length;i++){
+			if(myrows[i].cells[0].innerText==no.value){
+				window.alert("编号不能重复！");
+				return;
+			}
+		}
+		var newrow=mytable.insertRow(mytable.rows.length);
+		newrow.insertCell(0).innerText=no.value;
+		newrow.insertCell(1).innerText=pname.value;
+		newrow.insertCell(2).innerText=nickname.value;
+	}
+	
+	function test4(){//RegExp
+		var con=content.innerText;
+		var myReg=/(\d){4}/gi;//检索四个连续数字
+		while(res=myReg.exec(con)){
+			window.alert(res[0]+"+index:"+RegExp.index+"+right:"+RegExp.rightContext);
+		}
+	}
+	function test5(){
+		var con=content.innerText;
+		var myReg=/abc/gi;
+		if(myReg.test(con)){
+			alert("有");
+		}else{
+			alert("无");
+		}
+	}
+	function test6(){
+		var con=content.innerText;
+		var myReg=/abc/gi;
+		var res=con.match(myReg);
+		for(i=0;i<res.length;i++){
+			window.alert(res[i]);
+		}
+	}
+	function test7(){
+		var con=content.innerText;
+		var myReg=/abc/gi;
+		var newcon=con.replace(myReg,"ABC");
+		content.innerText=newcon;
+	}
+//-->
+</script>
+</head>
+<body>
+<h1>英雄排行榜</h1>
+<table id="mytable" border="1px">
+	<tr><td>排名</td><td>姓名</td><td>外号</td></tr>
+	<tr><td>1</td><td>宋江</td><td>及时雨</td></tr>
+	<tr><td>2</td><td>卢俊义</td><td>玉麒麟</td></tr>
+</table>
+<input type="button" onclick="test1()" value="查看"/>
+<input type="button" onclick="test2()" value="删除最后一行"/>
+
+<br/>
+<h3>请输入：</h3>
+编号：<input type="text" id="no"/><br/>
+姓名：<input type="text" id="pname"/><br/>
+外号：<input type="text" id="nickname"/><br/>
+<input type="button" onclick="test3()" value="插入"/>
+<br/><br/>
+<textarea id="content" rows="5" cols="20"></textarea>
+<br/>
+<input type="button" value="test4" onclick="test4()"/>
+<input type="button" value="test5" onclick="test5()"/>
+<input type="button" value="test6" onclick="test6()"/>
+<input type="button" value="test7" onclick="test7()"/>
+<br/><br/>
+</body>
+</html>

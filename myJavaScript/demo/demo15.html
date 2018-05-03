@@ -1,0 +1,46 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript">
+  <!--
+	function startIt(){
+		setInterval("myScroll()",100);
+	}
+	var space_num=0;
+	var dir=1;
+	function myScroll(){
+		var space_my="";
+		space_num=space_num+1*dir;
+		if(space_num>60||space_num<0){
+			dir=dir*-1;
+		}
+		for(var i=0;i<space_num;i++){
+			space_my=space_my+"  ";
+		}
+		window.status=space_my+"登陆到demo14";
+	}
+
+	function checkuser(){
+		if($("uname").value=="zhao"&&$("pwd").value=="123"){
+			return true;
+		}else{
+			$("uname").value="";
+			$("pwd").value="";
+			return false;
+		}
+	}
+	function $(id){
+		return document.getElementById(id);
+	}
+  //-->
+  </script>
+ </head>
+ <body onload="startIt()">
+  <form action="demo14.html">
+  u:<input type="text" id="uname"/><br/>
+  p:<input type="password" id="pwd"/><br/>
+  <input type="submit" value="登录" onclick="return checkuser()"/>
+  </form>
+  <a href="demo16.html">go to demo16</a>
+ </body>
+</html>

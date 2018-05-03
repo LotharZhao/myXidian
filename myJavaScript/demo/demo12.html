@@ -1,0 +1,46 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript">
+  <!--
+	document.writeln(Math.abs(-12));
+	document.writeln(Math.ceil(4.5));
+	document.writeln(Math.floor(4.5));
+	document.writeln(Math.round(4.55));
+	document.writeln(Math.random());//随机16位小数
+	document.writeln(Math.round(Math.random()*10));//随机0~10
+	document.writeln("<br/>");
+
+	var date=new Date();
+	document.writeln(date.toLocaleString()+"<br/>");
+	document.writeln(date.getYear()+"-"+date.getMonth());
+
+	function sayHello(date){
+		var hour=date.getHours();
+		var minute=date.getMinutes();
+		if(hour>6&&hour<=8){
+			window.alert("Good Moring");
+		}else if(hour>8&&hour<=11){
+			window.alert("上午好");
+		}else if(hour>11&&hour<=14){
+			window.alert("中午好");
+		}else if(hour>14&&hour<=18){
+			window.alert("下午好");
+		}else if(hour>18&&hour<=24){
+			window.alert("晚上好");
+		}else if(hour>0&&hour<=6){
+			window.alert("凌晨好");
+		}
+	}
+	sayHello(date);
+
+	//其他内部类略。。
+	var num=0x80
+	window.alert(isNaN(num));
+  //-->
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

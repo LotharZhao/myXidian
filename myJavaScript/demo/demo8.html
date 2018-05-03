@@ -1,0 +1,47 @@
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script language="javascript" type="text/javascript">
+  <!--
+	var p1=new Object();//通过Object直接创建对象
+	p1.name="Tom";
+	window.alert(p1.constructor);
+
+	var i1=new Number(10);
+	window.alert(i1.constructor);
+	var i2=10;
+	window.alert(i2.constructor);
+	Number.prototype.add=function(a){
+		return this+a;
+	}
+	window.alert(i1.add(1).add(10));
+
+	var arr1=new Array(3);
+	arr1[0]="hello";
+	arr1[1]="wor";
+	arr1[2]="ld";
+	Array.prototype.show=function(){
+		for(var i=0;i<this.length;i++){
+			document.writeln(this[i]);
+		}
+		document.writeln("<br/>");
+	}
+	arr1.show();
+	arr1.reverse();
+	arr1.show(arr1);
+	Array.prototype.find=function(val){
+		for(var i=0;i<this.length;i++){
+			if(val==this[i]){
+				return i;
+			}
+		}
+		return -1;
+	}
+	window.alert(arr1.find("world"));
+  //-->
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

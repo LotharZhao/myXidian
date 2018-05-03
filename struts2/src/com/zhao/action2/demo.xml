@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 配置action的方法访问 -->
+	<!-- 
+	<package name="method" extends="struts-default" namespace="/">
+		<action name="add" class="com.zhao.action2.MethodAction" method="add"></action>
+		<action name="update" class="com.zhao.action2.MethodAction" method="update"></action>
+	</package>
+	 -->
+	<!-- 通配符方式实现 -->
+	<package name="method" extends="struts-default" namespace="/">
+		<action name="method_*" class="com.zhao.action2.MethodAction" method="{1}"></action>
+	</package>
+	
+	<package name="demo1" extends="struts-default" namespace="/">
+		<!-- 全局结果页面 -->
+		<global-results>
+			<result name="success" type="redirect">/hello.jsp</result>
+		</global-results>
+		<action name="book" class="com.zhao.action2.BookAction"></action>
+		<action name="orders" class="com.zhao.action2.OrdersAction">
+			<result name="success" type="redirectAction">book</result>
+		</action>
+	</package>
+	
+	<package name="demo2" extends="struts-default" namespace="/">
+		<action name="form1" class="com.zhao.action2.Form1Action"></action>
+		<action name="form2" class="com.zhao.action2.Form2Action"></action>
+		<action name="form3" class="com.zhao.action2.Form3Action"></action>
+		<action name="form4" class="com.zhao.action2.Form4Action"></action>
+		
+		<action name="data1" class="com.zhao.action2.Data1Action"></action>
+		<action name="data2" class="com.zhao.action2.Data2Action"></action>
+		<action name="data3" class="com.zhao.action2.Data3Action"></action>
+		
+		<action name="list" class="com.zhao.action2.ListAction"></action>
+		<action name="map" class="com.zhao.action2.MapAction"></action>
+	</package>
+</struts>

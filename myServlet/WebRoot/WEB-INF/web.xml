@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>myServlet1</servlet-name>
+		<servlet-class>com.zhao.demo.myServlet1</servlet-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>author</param-name>
+			<param-value>zhao</param-value>
+		</init-param>
+		<init-param>
+			<param-name>version</param-name>
+			<param-value>1.0</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>myServlet2</servlet-name>
+		<servlet-class>com.zhao.demo.myServlet2</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>myServlet3</servlet-name>
+		<servlet-class>com.zhao.demo.myServlet3</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.zhao.view.LoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>LoginClServlet</servlet-name>
+		<servlet-class>com.zhao.controller.LoginClServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>MainFrame</servlet-name>
+		<servlet-class>com.zhao.view.MainFrame</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ManageUsers</servlet-name>
+		<servlet-class>com.zhao.view.ManageUsers</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>UserClServlet</servlet-name>
+		<servlet-class>com.zhao.controller.UserClServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ShowServlet</servlet-name>
+		<servlet-class>com.zhao.view.ShowServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>UpdateServlet</servlet-name>
+		<servlet-class>com.zhao.view.UpdateServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>AddServlet</servlet-name>
+		<servlet-class>com.zhao.view.AddServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ReadTimeCookie</servlet-name>
+		<servlet-class>com.zhao.demo.ReadTimeCookie</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>CreateSession</servlet-name>
+		<servlet-class>com.zhao.demo.CreateSession</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ReadSession</servlet-name>
+		<servlet-class>com.zhao.demo.ReadSession</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ShowBook</servlet-name>
+		<servlet-class>com.zhao.car.ShowBook</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>BuyBookCl</servlet-name>
+		<servlet-class>com.zhao.car.BuyBookCl</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ShowMyCar</servlet-name>
+		<servlet-class>com.zhao.car.ShowMyCar</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ServletContext1</servlet-name>
+		<servlet-class>com.zhao.demo.ServletContext1</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ServletContext2</servlet-name>
+		<servlet-class>com.zhao.demo.ServletContext2</servlet-class>
+		<init-param>
+			<param-name>pwd</param-name>
+			<param-value>123</param-value>
+		</init-param>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>InitServlet</servlet-name>
+		<servlet-class>com.zhao.controller.InitServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<context-param>
+		<param-name>username</param-name>
+		<param-value>scott</param-value>
+	</context-param>
+
+
+
+	<servlet-mapping>
+		<servlet-name>myServlet1</servlet-name>
+		<url-pattern>/myServlet1</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>myServlet1</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>myServlet2</servlet-name>
+		<url-pattern>/myServlet2</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>myServlet3</servlet-name>
+		<url-pattern>/myServlet3</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginClServlet</servlet-name>
+		<url-pattern>/LoginClServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MainFrame</servlet-name>
+		<url-pattern>/MainFrame</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ManageUsers</servlet-name>
+		<url-pattern>/ManageUsers</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UserClServlet</servlet-name>
+		<url-pattern>/UserClServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShowServlet</servlet-name>
+		<url-pattern>/ShowServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateServlet</servlet-name>
+		<url-pattern>/UpdateServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddServlet</servlet-name>
+		<url-pattern>/AddServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ReadTimeCookie</servlet-name>
+		<url-pattern>/ReadTimeCookie</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CreateSession</servlet-name>
+		<url-pattern>/CreateSession</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ReadSession</servlet-name>
+		<url-pattern>/ReadSession</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShowBook</servlet-name>
+		<url-pattern>/ShowBook</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>BuyBookCl</servlet-name>
+		<url-pattern>/BuyBookCl</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShowMyCar</servlet-name>
+		<url-pattern>/ShowMyCar</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletContext1</servlet-name>
+		<url-pattern>/ServletContext1</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletContext2</servlet-name>
+		<url-pattern>/ServletContext2</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>InitServlet</servlet-name>
+		<url-pattern>/InitServlet</url-pattern>
+	</servlet-mapping>
+
+</web-app>

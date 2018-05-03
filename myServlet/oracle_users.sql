@@ -1,0 +1,57 @@
+--------------------------------------------------------
+--  文件已创建 - 星期一-三月-13-2017   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table USERS
+--------------------------------------------------------
+
+  CREATE TABLE "SCOTT"."USERS" 
+   (	"ID" NUMBER, 
+	"USERNAME" VARCHAR2(32 BYTE), 
+	"PWD" VARCHAR2(32 BYTE), 
+	"EMAIL" VARCHAR2(64 BYTE), 
+	"GRADE" NUMBER DEFAULT 1
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into SCOTT.USERS
+SET DEFINE OFF;
+Insert into SCOTT.USERS (ID,USERNAME,PWD,EMAIL,GRADE) values (1,'a','123','a@123.com',2);
+Insert into SCOTT.USERS (ID,USERNAME,PWD,EMAIL,GRADE) values (2,'b','123','b@123.com',2);
+Insert into SCOTT.USERS (ID,USERNAME,PWD,EMAIL,GRADE) values (3,'c','123','c@123.com',1);
+Insert into SCOTT.USERS (ID,USERNAME,PWD,EMAIL,GRADE) values (4,'d','123','d@123.com',1);
+Insert into SCOTT.USERS (ID,USERNAME,PWD,EMAIL,GRADE) values (14,'www','123','www@123.com',1);
+Insert into SCOTT.USERS (ID,USERNAME,PWD,EMAIL,GRADE) values (5,'e','123','e@123.com',1);
+Insert into SCOTT.USERS (ID,USERNAME,PWD,EMAIL,GRADE) values (6,'f','123','f@123.com',1);
+Insert into SCOTT.USERS (ID,USERNAME,PWD,EMAIL,GRADE) values (7,'g','123','g@123.com',1);
+Insert into SCOTT.USERS (ID,USERNAME,PWD,EMAIL,GRADE) values (8,'h','123','h@123.com',1);
+Insert into SCOTT.USERS (ID,USERNAME,PWD,EMAIL,GRADE) values (9,'i','123','i@123.com',1);
+Insert into SCOTT.USERS (ID,USERNAME,PWD,EMAIL,GRADE) values (10,'j','123','j@123.com',1);
+Insert into SCOTT.USERS (ID,USERNAME,PWD,EMAIL,GRADE) values (11,'qqq','123','qqq@123.com',1);
+--------------------------------------------------------
+--  DDL for Index USERS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SCOTT"."USERS_PK" ON "SCOTT"."USERS" ("ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table USERS
+--------------------------------------------------------
+
+  ALTER TABLE "SCOTT"."USERS" MODIFY ("ID" NOT NULL ENABLE);
+ 
+  ALTER TABLE "SCOTT"."USERS" MODIFY ("USERNAME" NOT NULL ENABLE);
+ 
+  ALTER TABLE "SCOTT"."USERS" MODIFY ("PWD" NOT NULL ENABLE);
+ 
+  ALTER TABLE "SCOTT"."USERS" MODIFY ("EMAIL" NOT NULL ENABLE);
+ 
+  ALTER TABLE "SCOTT"."USERS" ADD CONSTRAINT "USERS_PK" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+  TABLESPACE "USERS"  ENABLE;

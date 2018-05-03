@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="demo4" extends="struts-default" namespace="/">
+		<interceptors>
+			<interceptor name="loginintercept" class="com.zhao.interceptor.LoginInterceptor"></interceptor>
+		</interceptors>
+		
+		<action name="*" class="com.zhao.action4.LoginAction" method="{1}">
+			<interceptor-ref name="loginintercept">
+				<!-- 配置action里面某些方法不进行拦截
+					name：excludeMethods
+					值：action不拦截的方法名称
+				 -->
+				<param name="excludeMethods">login</param>
+			</interceptor-ref>
+			<!-- 加载自定义拦截器会关闭默认的  如果需要默认拦截器 需要再进行如下配置 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
+			<result name="loginsuccess">/day4/ok.jsp</result>
+			<result name="login" type="redirect">/day4/login.jsp</result>
+			<result name="logout">/day4/outok.jsp</result>
+		</action>
+	</package>
+</struts>

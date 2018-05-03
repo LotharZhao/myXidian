@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+	
+	<!-- anno 开启注解扫描 在包里面扫描类、方法、属性上面是否有注解 -->
+	<context:component-scan base-package="com.zhao.day2.anno"></context:component-scan>
+	<!-- 扫描属性上面的注解 -->
+	<!-- <context:annotation-config></context:annotation-config> -->
+	
+	<!-- xml+anno 配置对象 -->
+	<bean id="bookService" class="com.zhao.day2.xmlanno.BookService"></bean>
+	<bean id="bookDao" class="com.zhao.day2.xmlanno.BookDao"></bean>
+	<bean id="ordersDao" class="com.zhao.day2.xmlanno.OrdersDao"></bean>
+	
+	<!-- =========== -->
+	<bean id="book" class="com.zhao.day2.aop.Book"></bean>
+	<bean id="myBook" class="com.zhao.day2.aop.MyBook"></bean>
+	<!-- 配置aop操作 -->
+	<aop:config>
+		<!-- 配置切入点 -->
+		<aop:pointcut expression="execution(* com.zhao.day2.aop.Book.*(..))" id="pointcut1"></aop:pointcut>
+		<!-- 配置切面 把增强用到方法上 -->
+		<aop:aspect ref="myBook">
+			<!-- 配置增强类型 -->
+			<aop:before method="before1" pointcut-ref="pointcut1"/>
+			<aop:after method="after1" pointcut-ref="pointcut1"/>
+			<!-- 环绕 -->
+			<aop:around method="around1" pointcut-ref="pointcut1"/>
+		</aop:aspect>
+	</aop:config>
+</beans>

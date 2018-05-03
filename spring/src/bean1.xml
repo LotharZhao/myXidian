@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- ioc入门 -->
+    <bean id="user" class="com.zhao.day1.ioc.User" scope="prototype">
+    	<constructor-arg value="abc"></constructor-arg>
+    	<constructor-arg value="1234"></constructor-arg>
+    </bean>
+    
+    <!-- set方式注入 -->
+    <bean id="book" class="com.zhao.day1.ioc.Book">
+    	<property name="name" value="qwer"></property>
+    </bean>
+    
+    <!-- 注入对象类型的属性 -->
+    <bean id="userDao" class="com.zhao.day1.ioc.UserDao"></bean>
+    <bean id="userService" class="com.zhao.day1.ioc.UserService">
+    	<!-- 注入dao对象 不写value
+    		name：写service类里面属性的名称
+    		ref：写dao配置bean标签中的id值
+    	 -->
+    	<property name="userDao" ref="userDao"></property>
+    	<property name="userDao2" ref="userDao"></property>
+    </bean>
+    
+    <!-- p名称空间注入 -->
+    <bean id="person" class="com.zhao.day1.ioc.Person" p:pname="asdf"></bean>
+    
+    <bean id="person2" class="com.zhao.day1.ioc.Person">
+    	<!-- 数组 -->
+    	<property name="arrs">
+    		<list>
+    			<value>qwe</value>
+    			<value>asdf</value>
+    			<value>大家好</value>
+    		</list>
+    	</property>
+    	<!-- List -->
+    	<property name="list">
+    		<list>
+    			<value>大家好</value>
+    			<value>qwer</value>
+    			<value>12ds</value>
+    		</list>
+    	</property>
+    	<!-- Map -->
+    	<property name="map">
+    		<map>
+    			<entry key="ab" value="大家好"></entry>
+    			<entry key="cc" value="skdfha"></entry>
+    			<entry key="dd" value="sdvxs"></entry>
+    		</map>
+    	</property>
+    	<!-- Properties -->
+    	<property name="properties">
+    		<props>
+    			<prop key="dirverclass">com.mysql.jdbc.Driver</prop>
+    			<prop key="user">root</prop>
+    			<prop key="password">1234</prop>
+    		</props>
+    	</property>
+    </bean>
+</beans>

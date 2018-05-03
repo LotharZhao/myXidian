@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="demo3" extends="struts-default" namespace="/">
+		<action name="ValueStack" class="com.zhao.action3.ValueStackAction">
+			<result name="success">/day3/valueStack.jsp</result>
+		</action>
+		<action name="ObjectValueStack" class="com.zhao.action3.ObjectValueStackAction">
+			<result name="success">/day3/valueStack.jsp</result>
+		</action>
+		<action name="ListValueStack" class="com.zhao.action3.ListValueStackAction">
+			<result name="success">/day3/valueStack.jsp</result>
+		</action>
+		<action name="Context" class="com.zhao.action3.ContextAction">
+			<result name="success">/day3/context.jsp</result>
+		</action>
+	</package>
+</struts>
